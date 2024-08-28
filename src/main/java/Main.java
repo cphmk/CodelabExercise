@@ -9,12 +9,6 @@ public class Main {
                 .name("Joakim")
                 .age(42)
                 .build());
-
-       /* personDAO.delete(Person.builder()
-                .id(2)
-                .build());
-
-        */
     }
 }
 

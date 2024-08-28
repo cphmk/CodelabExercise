@@ -3,6 +3,8 @@ package entities;
 import jakarta.persistence.*;
 import jdk.jfr.Name;
 import lombok.*;
+import jakarta.persistence.Entity;
+import lombok.*;
 
 @Builder
 @Getter
