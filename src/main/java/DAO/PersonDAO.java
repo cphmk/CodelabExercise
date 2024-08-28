@@ -1,15 +1,41 @@
 package DAO;
 
 import entities.Person;
+import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.metamodel.Metamodel;
+import persistence.HibernateConfig;
 
-public class PersonDAO {
+import java.util.Map;
 
-    PersonDAO(){
+public class PersonDAO implements DAOInterface<Person>{
+
+    private EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
+
+
+        @Override
+        public void createPerson(Person person) {
+            try (EntityManager em = emf.createEntityManager()) {
+                em.getTransaction().begin();
+                em.persist(person);
+                em.getTransaction().commit();
+            }
+        }
+
+    @Override
+    public void deletePerson(Person person) {
 
     }
 
-    public void createPerson(Person person) {
+    @Override
+    public void updatePerson(Person person) {
 
     }
+
+    @Override
+    public Person findPerson(Person person) {
+        return null;
+    }
+
 
 }
