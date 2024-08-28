@@ -18,16 +18,28 @@ public class PersonDAO implements IDAO<Person>{
 
     @Override
     public Person getById(int id) {
-        return null;
+        try(EntityManager em = emf.createEntityManager()){
+            return em.find(Person.class, id);
+        }
     }
 
     @Override
     public void update(Person person) {
+        try(EntityManager em = emf.createEntityManager()){
+            em.getTransaction().begin();
+            em.merge(person);
+            em.getTransaction().commit();
+        }
 
     }
 
     @Override
     public void delete(Person person) {
 
+        try(EntityManager em = emf.createEntityManager()){
+            em.getTransaction().begin();
+            em.remove(person);
+            em.getTransaction().commit();
+        }
     }
 }

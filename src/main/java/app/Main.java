@@ -7,7 +7,8 @@ public class Main {
         Person person = Person.builder()
                 .name("Benjamin")
                 .age(29)
+               // .id(1)
                 .build();
-        personDAO.create(person);
+        System.out.println(personDAO.getById(2));
     }
 }
