@@ -1,6 +1,4 @@
 package DAO;
-
-
 import java.util.Set;
 
 public interface DAOInterface<Thing> {

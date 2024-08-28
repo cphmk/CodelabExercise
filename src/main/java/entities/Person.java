@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jdk.jfr.Name;
 import lombok.*;
 import jakarta.persistence.Entity;
-import lombok.*;
 
 @Builder
 @Getter
@@ -21,4 +20,5 @@ public class Person {
     @Column(name = "name")
     private String name;
     private int age;
+
 }
