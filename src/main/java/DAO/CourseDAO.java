@@ -11,7 +11,7 @@ public class CourseDAO implements DAOInterface<Course> {
     private EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
 
     @Override
-    public void createPerson(Course course) {
+    public void create(Course course) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.persist(course);
@@ -20,7 +20,7 @@ public class CourseDAO implements DAOInterface<Course> {
     }
 
     @Override
-    public void deletePerson(Course course) {
+    public void delete(Course course) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.remove(course);
@@ -30,7 +30,7 @@ public class CourseDAO implements DAOInterface<Course> {
     }
 
     @Override
-    public void updatePerson(Course course) {
+    public void update(Course course) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.merge(course);
@@ -40,7 +40,7 @@ public class CourseDAO implements DAOInterface<Course> {
     }
 
     @Override
-    public Course findPerson(Course course) {
+    public Course find(Course course) {
         try (EntityManager em = emf.createEntityManager()) {
             return em.find(Course.class, course.getId());
         }
