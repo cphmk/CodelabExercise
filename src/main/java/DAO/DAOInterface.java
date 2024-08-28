@@ -1,9 +1,13 @@
 package DAO;
 
+
+import java.util.Set;
+
 public interface DAOInterface<Thing> {
 
-    void createPerson(Thing thing);
-    void deletePerson(Thing thing);
-    void updatePerson(Thing thing);
-    Thing findPerson(Thing thing);
+    void create(Thing thing);
+    void delete(Thing thing);
+    void update(Thing thing);
+    Thing find(Thing thing);
+    Set<Thing> getAll();
 }

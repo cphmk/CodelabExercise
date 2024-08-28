@@ -9,44 +9,44 @@ import persistence.HibernateConfig;
 import java.util.Map;
 import java.util.Set;
 
-
-public class PersonDAO implements DAOInterface<Person>{
+public class StudentDAO implements DAOInterface<Student> {
 
     private EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
 
 
-        @Override
-        public void create(Person person) {
-            try (EntityManager em = emf.createEntityManager()) {
-                em.getTransaction().begin();
-                em.persist(person);
-                em.getTransaction().commit();
-            }
-        }
-
     @Override
-    public void delete(Person person) {
+    public void create(Student person) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-            em.remove(person);
+            em.persist(Student);
             em.getTransaction().commit();
         }
     }
 
     @Override
+    public void delete(Student person) {
+        try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+            em.remove(Student);
+            em.getTransaction().commit();
+        }
 
-    public void update(Person person) {
-      
     }
 
     @Override
-    public Person find(Person person) {
+    public void update(Student person) {
+
+    }
+
+    @Override
+    public Person find(Student person) {
         return null;
     }
 
     @Override
-    public Set<Person> getAll() {
+    public Set<Student> getAll() {
         return Set.of();
     }
+
 
 }
