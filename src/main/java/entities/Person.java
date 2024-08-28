@@ -1,7 +1,9 @@
 package entities;
 
 import jakarta.persistence.*;
+import jdk.jfr.Name;
 import lombok.*;
+import jakarta.persistence.Entity;
 
 @Builder
 @Getter
@@ -10,14 +12,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="person")
-
-
+@Table(name = "persons")
 public class Person {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "name")
     private String name;
     private int age;
 
