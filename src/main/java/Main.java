@@ -8,7 +8,6 @@ public class Main {
         personDAO.createPerson(Person.builder()
                 .name("Joakim")
                 .age(42)
-                .id(1)
                 .build());
     }
 }

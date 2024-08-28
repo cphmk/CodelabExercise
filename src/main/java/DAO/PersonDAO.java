@@ -37,5 +37,11 @@ public class PersonDAO implements DAOInterface<Person>{
         return null;
     }
 
+    @Override
+    public void readPerson(Person person) {
+
+
+    }
+
 
 }
