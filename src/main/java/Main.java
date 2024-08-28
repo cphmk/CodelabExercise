@@ -5,11 +5,16 @@ public class Main {
     public static void main(String[] args) {
 
         PersonDAO personDAO = new PersonDAO();
-        personDAO.createPerson(Person.builder()
+        personDAO.create(Person.builder()
                 .name("Joakim")
                 .age(42)
-                .id(1)
                 .build());
+
+       /* personDAO.delete(Person.builder()
+                .id(2)
+                .build());
+
+        */
     }
 }
 
