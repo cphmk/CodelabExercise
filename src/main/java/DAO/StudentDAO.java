@@ -1,6 +1,7 @@
 package DAO;
 
 import entities.Person;
+import entities.Student;
 import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.metamodel.Metamodel;
@@ -15,31 +16,31 @@ public class StudentDAO implements DAOInterface<Student> {
 
 
     @Override
-    public void create(Student person) {
+    public void create(Student student) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-            em.persist(Student);
+            em.persist(student);
             em.getTransaction().commit();
         }
     }
 
     @Override
-    public void delete(Student person) {
+    public void delete(Student student) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-            em.remove(Student);
+            em.remove(student);
             em.getTransaction().commit();
         }
 
     }
 
     @Override
-    public void update(Student person) {
+    public void update(Student student) {
 
     }
 
     @Override
-    public Person find(Student person) {
+    public Student find(Student student) {
         return null;
     }
 
